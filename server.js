@@ -5,7 +5,7 @@
 import { coinFlip, coinFlips, countFlips, flipACoin} from './modules/coin.mjs'
 import { createRequire } from 'module'
 
-const require = creteaRequire(import.meta.url)
+const require = createRequire(import.meta.url)
 const express = require('express')
 const app = express()
 
@@ -31,6 +31,7 @@ app.get('/app/', (req, res) => {
         res.writeHead( res.statusCode, { 'Content-Type' : 'text/plain' });
         res.end(res.statusCode+ ' ' +res.statusMessage)
     });
+    
 
 app.get('/app/flips/:number', (req, res) => {
 	res.statusCode = 200;
@@ -38,3 +39,5 @@ app.get('/app/flips/:number', (req, res) => {
     res.writeHead(res.statusCode, {'Content-Type' : 'text/plain'});
     res.end(res.statusCode+ ' ' +res.statusMessage)
 });
+
+var aNum = req.params.number;
