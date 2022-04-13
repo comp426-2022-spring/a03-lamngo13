@@ -33,6 +33,8 @@ app.get('/app/flip/', (req, res) => {
     // Respond with status 200
     res.statusCode = 200;
     let outcome = coinFlip();
+
+    //sending the data
     if (outcome == "heads") {
         res.json({"flip":"heads"});
     } else {
@@ -46,11 +48,15 @@ app.get('/app/flips/:number', (req, res) => {
 	// Respond with status 200
     res.statusCode = 200;
     let theNum = req.params.number;
-    
+    let zraw = coinFlips(theNum);
+    let zsummary = countFlips(coinFlips(zraw))
+
+    //send the data
+    res.json({"raw":zraw, "summary":zsummary})
+
     
 });
 
-//var aNum = req.params.number;
 
 // Default response for any other request
 app.use(function(req, res){
