@@ -123,11 +123,11 @@
     
     function flipACoin(call) {
         let flip = coinFlip()
-        let returnable = { call: call, flip: returnable, result: 'lose' }
+        const obj = { call: call, flip: flip, result: 'lose' }
         if (call == flip) {
-            returnable.result = 'win';
+            obj.result = 'win';
         }
-        return returnable;
+        return obj;
       //let result = coinFlip();
       //let winner = ""
       //if (call == result) {
@@ -138,8 +138,6 @@
     //  return "{call:" + call +",flip:" + result + ",result:" + winner +"}"
     }
     
-
-
     /** Export 
      * export {coinFlip, coinFlips, countFlips, flipACoin};
      * Export all of your named functions
