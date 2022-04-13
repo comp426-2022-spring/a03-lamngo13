@@ -40,4 +40,4 @@ app.get('/app/flips/:number', (req, res) => {
     res.end(res.statusCode+ ' ' +res.statusMessage)
 });
 
-var aNum = req.params.number;
+//var aNum = req.params.number;
