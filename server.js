@@ -32,13 +32,22 @@ app.get('/app/', (req, res) => { //CHECKPOINTT
 app.get('/app/flip/', (req, res) => {
     // Respond with status 200
     res.statusCode = 200;
-    res.json(coinFlip())
+    let outcome = coinFlip();
+    if (outcome == "heads") {
+        res.json({"flip":"heads"});
+    } else {
+        res.json({"flip":"tails"});
+    }
+    //res.json(coinFlip())
 });
     
-
+//MANY FLIPS
 app.get('/app/flips/:number', (req, res) => {
-	res.statusCode = 200;
-    //MANY FLIPS
+	// Respond with status 200
+    res.statusCode = 200;
+    let theNum = req.params.number;
+    
+    
 });
 
 //var aNum = req.params.number;
