@@ -129,7 +129,7 @@
       } else {
         winner = "lose"
       }
-      return "{call: " + call +", flip: " + result + ", result: " + winner +"}"
+      return "{call:" + call +",flip:" + result + ",result:" + winner +"}"
     }
     //bruh
     
