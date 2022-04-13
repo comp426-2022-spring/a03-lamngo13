@@ -49,7 +49,8 @@ app.get('/app/flips/:number', (req, res) => {
     res.statusCode = 200;
     let theNum = req.params.number;
     let zraw = coinFlips(theNum);
-    let zsummary = countFlips(coinFlips(zraw))
+    //use the outcomes
+    let zsummary = countFlips(zraw)
 
     //send the data
     res.json({"raw":zraw, "summary":zsummary})
