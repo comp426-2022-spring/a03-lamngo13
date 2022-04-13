@@ -1,7 +1,3 @@
-//takes an arbitrary
-//port number as a cmd line
-//arg (npm run server)
-//port should default to 5000
 import { coinFlip, coinFlips, countFlips, flipACoin} from './modules/coin.mjs'
 import { createRequire } from 'module'
 
@@ -32,6 +28,7 @@ app.get('/app/', (req, res) => { //CHECKPOINTT
 app.get('/app/flip/', (req, res) => {
     // Respond with status 200
     res.statusCode = 200;
+    res.statusMessage = 'OK';
     let outcome = coinFlip();
 
     //sending the data
@@ -47,9 +44,10 @@ app.get('/app/flip/', (req, res) => {
 app.get('/app/flips/:number', (req, res) => {
 	// Respond with status 200
     res.statusCode = 200;
+    res.statusMessage = 'OK';
     let theNum = req.params.number;
     let zraw = coinFlips(theNum);
-    //use the outcomes
+    //use the outcomes - only run coinFlips ONCE
     let zsummary = countFlips(zraw)
 
     //send the data
@@ -61,6 +59,7 @@ app.get('/app/flips/:number', (req, res) => {
 app.get('/app/flip/call/heads', (req, res) => {
     // Respond with status 200
     res.statusCode = 200;
+    res.statusMessage = 'OK';
     res.json(flipACoin("heads"))
 });
 
@@ -68,6 +67,7 @@ app.get('/app/flip/call/heads', (req, res) => {
 app.get('/app/flip/call/tails', (req, res) => {
     // Respond with status 200
     res.statusCode = 200;
+    res.statusMessage = 'OK';
     res.json(flipACoin("tails"))
 });
 
