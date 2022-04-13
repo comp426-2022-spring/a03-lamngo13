@@ -122,17 +122,24 @@
      */
     
     function flipACoin(call) {
-      let result = coinFlip();
-      let winner = ""
-      if (call == result) {
-        winner = "win"
-      } else {
-        winner = "lose"
-      }
-      return "{call:" + call +",flip:" + result + ",result:" + winner +"}"
+        let flip = coinFlip()
+        let returnable = { call: call, flip: returnable, result: 'lose' }
+        if (call == flip) {
+            returnable.result = 'win';
+        }
+        return returnable;
+      //let result = coinFlip();
+      //let winner = ""
+      //if (call == result) {
+      //  winner = "win"
+      //} else {
+      //  winner = "lose"
+     // }
+    //  return "{call:" + call +",flip:" + result + ",result:" + winner +"}"
     }
-    //bruh
     
+
+
     /** Export 
      * export {coinFlip, coinFlips, countFlips, flipACoin};
      * Export all of your named functions
