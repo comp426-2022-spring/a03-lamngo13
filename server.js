@@ -60,7 +60,9 @@ app.get('/app/flip/call/heads', (req, res) => {
     // Respond with status 200
     res.statusCode = 200;
     res.statusMessage = 'OK';
-    res.json(flipACoin("heads"))
+    let abstraction = flipACoin('heads')
+    res.json(abstraction);
+    //res.json(flipACoin("heads"))
 });
 
 //guess tails
@@ -68,7 +70,9 @@ app.get('/app/flip/call/tails', (req, res) => {
     // Respond with status 200
     res.statusCode = 200;
     res.statusMessage = 'OK';
-    res.json(flipACoin("tails"))
+    let abstraction = flipACoin('tails');
+    res.json(abstraction);
+    //res.json(flipACoin("tails"))
 });
 
 
