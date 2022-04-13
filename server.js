@@ -27,6 +27,13 @@ app.get('/app/', (req, res) => { //CHECKPOINTT
         res.writeHead( res.statusCode, { 'Content-Type' : 'text/plain' });
         res.end(res.statusCode+ ' ' +res.statusMessage)
     });
+
+//RANDOM COIN FLIP ENDPOINT /app/flip/
+app.get('/app/flip/', (req, res) => {
+    // Respond with status 200
+    res.statusCode = 200;
+    res.json(coinFlip())
+});
     
 
 app.get('/app/flips/:number', (req, res) => {
