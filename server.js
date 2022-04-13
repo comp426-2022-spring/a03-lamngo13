@@ -57,6 +57,13 @@ app.get('/app/flips/:number', (req, res) => {
     
 });
 
+//guess heads
+app.get('/app/flip/call/heads', (req, res) => {
+    // Respond with status 200
+    res.statusCode = 200;
+    res.json(flipACoin("heads"))
+});
+
 
 // Default response for any other request
 app.use(function(req, res){
