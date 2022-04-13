@@ -54,7 +54,6 @@ app.get('/app/flips/:number', (req, res) => {
     //send the data
     res.json({"raw":zraw, "summary":zsummary})
 
-    
 });
 
 //guess heads
@@ -62,6 +61,13 @@ app.get('/app/flip/call/heads', (req, res) => {
     // Respond with status 200
     res.statusCode = 200;
     res.json(flipACoin("heads"))
+});
+
+//guess tails
+app.get('/app/flip/call/tails', (req, res) => {
+    // Respond with status 200
+    res.statusCode = 200;
+    res.json(flipACoin("tails"))
 });
 
 
