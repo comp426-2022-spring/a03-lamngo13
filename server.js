@@ -18,12 +18,8 @@ const server = app.listen(port, () => {
     console.log('App listening on port %PORT%'.replace('%PORT%',port)) 
 });
 
-// Default response for any other request
-app.use(function(req, res){
-    res.status(404).send('404 NOT FOUND')
-});
 
-app.get('/app/', (req, res) => {
+app.get('/app/', (req, res) => { //CHECKPOINTT
     // Respond with status 200
         res.statusCode = 200;
     // Respond with status message "OK"
@@ -35,9 +31,12 @@ app.get('/app/', (req, res) => {
 
 app.get('/app/flips/:number', (req, res) => {
 	res.statusCode = 200;
-    res.statusMessage = "OK"
-    res.writeHead(res.statusCode, {'Content-Type' : 'text/plain'});
-    res.end(res.statusCode+ ' ' +res.statusMessage)
+    //MANY FLIPS
 });
 
 //var aNum = req.params.number;
+
+// Default response for any other request
+app.use(function(req, res){
+    res.status(404).send('404 NOT FOUND')
+});
